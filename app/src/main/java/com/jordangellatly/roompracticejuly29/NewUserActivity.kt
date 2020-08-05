@@ -9,7 +9,7 @@ import android.widget.Button
 import android.widget.EditText
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
-class NewWordActivity : AppCompatActivity() {
+class NewUserActivity : AppCompatActivity() {
 
     private lateinit var editWordView: EditText
 

@@ -7,14 +7,14 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 
 @Dao
-interface WordDao {
-
-    @Query("SELECT * FROM word_table ORDER BY word ASC")
-    fun getAlphabetizedWords(): LiveData<List<Word>>
+interface UserDao {
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun insert(word: Word)
+    fun insertUser(user: User)
 
-    @Query("DELETE FROM word_table")
+    @Query("SELECT * FROM user_table")
+    fun getAllUsers(): LiveData<List<User>>
+
+    @Query("DELETE FROM user_table")
     suspend fun deleteAll()
 }
