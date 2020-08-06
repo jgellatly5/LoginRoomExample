@@ -1,20 +1,19 @@
 package com.jordangellatly.roompracticejuly29
 
-import android.app.Activity
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import kotlinx.android.synthetic.main.activity_login.*
 
-class MainActivity : AppCompatActivity() {
+class LoginActivity : AppCompatActivity() {
 
     private lateinit var userViewModel: UserViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_login)
 
         userViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
         userViewModel.allUsers.observe(this, Observer { words ->
@@ -22,5 +21,15 @@ class MainActivity : AppCompatActivity() {
 //                adapter.setWords(it)
 //            }
         })
+
+        btnLogin.setOnClickListener {
+            val intent = Intent(this, UserActivity::class.java)
+            startActivity(intent)
+        }
+
+        registerPrompt.setOnClickListener {
+            val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

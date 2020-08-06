@@ -9,13 +9,13 @@ import android.widget.Button
 import android.widget.EditText
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
-class NewUserActivity : AppCompatActivity() {
+class RegisterActivity : AppCompatActivity() {
 
     private lateinit var editWordView: EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_new_word)
+        setContentView(R.layout.activity_register)
         editWordView = findViewById(R.id.edit_word)
 
         val button = findViewById<Button>(R.id.button_save)
