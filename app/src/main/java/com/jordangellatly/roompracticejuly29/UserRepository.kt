@@ -9,4 +9,8 @@ class UserRepository(private val userDao: UserDao) {
     suspend fun insert(user: User) {
         userDao.insertUser(user)
     }
+
+    suspend fun getUser(email: String): User? {
+        return userDao.getUser(email)
+    }
 }

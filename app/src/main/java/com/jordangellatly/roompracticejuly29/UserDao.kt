@@ -9,6 +9,9 @@ import androidx.room.Query
 @Dao
 interface UserDao {
 
+    @Query("SELECT * FROM user_table WHERE email = :email")
+    fun getUser(email: String): User?
+
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     fun insertUser(user: User)
 
