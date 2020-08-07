@@ -26,7 +26,7 @@ abstract class UserRoomDatabase: RoomDatabase() {
                     context.applicationContext,
                     UserRoomDatabase::class.java,
                     "user_database"
-                ).build()
+                ).fallbackToDestructiveMigration().build()
                 INSTANCE = instance
                 return instance
             }
